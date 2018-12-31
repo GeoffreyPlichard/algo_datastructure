@@ -10,9 +10,9 @@
 
 // Solution 1. Turn the string into an array, then reverse it and join to a string again.
 
-function reverse(str) {
-    return str.split('').reverse().join('');
-}
+// function reverse(str) {
+//     return str.split('').reverse().join('');
+// }
 
 
 
@@ -34,5 +34,12 @@ function reverse(str) {
 
 //     return reversed;
 // }
+
+
+
+// Solution 3. More complicated solution with the reduce helper
+function reverse(str) {
+    return str.split('').reduce((rev, char) => char + rev, '');
+}
 
 module.exports = reverse;
