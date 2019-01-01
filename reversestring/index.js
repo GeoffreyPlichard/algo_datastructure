@@ -36,7 +36,6 @@
 // }
 
 
-
 // Solution 3. More complicated solution with the reduce helper
 function reverse(str) {
     return str.split('').reduce((rev, char) => char + rev, '');
