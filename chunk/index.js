@@ -11,20 +11,37 @@
 
 
 // SOLUTION 1
+// function chunk(array, size) {
+//     const chunked = [];
+    
+//     for (let el of array) {
+//         const last = chunked[chunked.length - 1];
+//         debugger;
+
+//         if (!last || last.length === size) {
+//             chunked.push([el]);
+//         } else {
+//             last.push(el);
+//         }
+//     }
+
+//     return chunked;
+// }
+
+
+// SOLUTION 2 - Using slice helper
 function chunk(array, size) {
     const chunked = [];
-
-    for (let el of array) {
-        const last = chunked[chunked.length - 1];
-
-        if (!last || last.length === size) {
-            chunked.push([el]);
-        } else {
-            last.push(el);
-        }
+    let index = 0;
+    
+    while (index < array.length) {
+        chunked.push(array.slice(index, index + size));
+        index += size;
     }
 
     return chunked;
 }
+
+// chunk([1, 2, 3, 4, 5], 2)
 
 module.exports = chunk;
